@@ -12,10 +12,18 @@ load_dotenv()
 
 app = Flask(__name__)
 # Production için Vercel URL'ini ekleyin
-CORS(app, resources={r"/*": {"origins": [
-    "http://localhost:3000",
-    "https://your-app-name.vercel.app"  # Vercel'de yayınladıktan sonra buraya kendi URL'inizi ekleyin
-]}})
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "http://localhost:3000",
+            "https://odyse-gorsel-arama.vercel.app",  # Vercel URL'iniz
+            "https://odyse-gorsel-arama-git-dev-borapertev.vercel.app",  # Dev branch URL'i
+            "https://odyse-gorsel-arama-borapertev.vercel.app"  # Diğer olası Vercel URL'i
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 # HTML template
 HTML_TEMPLATE = """
