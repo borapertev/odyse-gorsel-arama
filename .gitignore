@@ -29,6 +29,7 @@ yarn-error.log*
 env/
 venv/
 ENV/
+.env.example
 
 # Python
 __pycache__/
@@ -59,3 +60,14 @@ wheels/
 credentials.json
 token.json
 *.key
+
+# Procfile
+Procfile
+backend/Procfile
+
+# Requirements
+requirements.txt
+backend/requirements.txt
+
+# Documentation
+README.md
